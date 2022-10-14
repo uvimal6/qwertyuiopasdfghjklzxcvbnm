@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <script>
+      let inactivityTime = function() {
+        let time;
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+        function logout() {
+          alert('Alert For your User!');
+          window.location.reload();
+        }
+        function resetTimer() {
+          clearTimeout(time);
+          time = setTimeout(logout, 2000)//2 sec idle mouse and key
+        }
+      };
+      window.onload = function() {
+        inactivityTime();
+      }
+    </script>
+  </body>
+</html>
